@@ -10,5 +10,6 @@ RUN mkdir -p /opt/apache-activemq-5.15.0/data
 RUN chown filebeat:filebeat /opt/apache-activemq-5.15.0/data
 
 RUN chown filebeat:filebeat /usr/share/filebeat/filebeat.yml
+RUN chmod go-w /usr/share/filebeat/filebeat.yml
 
 USER filebeat
