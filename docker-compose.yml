@@ -1,0 +1,27 @@
+version: '3'
+
+services:
+  xqa-message-broker-filebeat:
+    build: filebeat
+    image: "xqa-message-broker-filebeat"
+    container_name: "xqa-message-broker-filebeat"
+    volumes:
+      - "xqa-message-broker:/opt/apache-activemq-5.15.1/data"
+    network_mode: "host"
+
+  xqa-message-broker:
+    build: .
+    image: "xqa-message-broker"
+    container_name: "xqa-message-broker"
+    ports:
+      - "1099:1099"
+      - "5672:5672"
+      - "8161:8161"
+      - "61616:61616"
+    volumes:
+      - "xqa-message-broker:/opt/apache-activemq-5.15.1/data"
+    network_mode: "host"
+
+volumes:
+  xqa-message-broker:
+
