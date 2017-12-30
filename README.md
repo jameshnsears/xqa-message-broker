@@ -2,7 +2,7 @@
 * an ActiveMQ instance that provides AMQP and HTTP.
 
 # 1. Build locally
-* docker-compose -p "dev" build
+* docker-compose -p "dev" build --force-rm
 
 # 2. Bring up
 * docker-compose -p "dev" up -d
