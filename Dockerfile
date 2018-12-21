@@ -1,7 +1,5 @@
 FROM ubuntu:bionic
 
-MAINTAINER james.hn.sears@gmail.com
-
 RUN apt-get -qq update
 RUN apt-get -qq install curl
 
